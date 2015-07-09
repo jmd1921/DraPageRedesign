@@ -1,0 +1,13 @@
+a:hover {
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+.container div:last-child{
+    text-align: right;
+}
