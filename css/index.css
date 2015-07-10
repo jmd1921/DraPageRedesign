@@ -1,3 +1,15 @@
+.container-fluid {
+    padding: 0;
+    overflow-y: hidden;
+}
+
+#article {
+    position: absolute;
+}
+
+p {
+    z-index: 5;
+}
 .row div {
     border-left: solid 1px
 }
@@ -10,11 +22,6 @@
 
 a {
     color: black;
-}
-
-.selected {
-    background-color: dimgray;
-    border-radius: 5px;
 }
 
 .selected a {
@@ -36,4 +43,8 @@ span.glyphicon {
 
 span.glyphicon:hover {
     color: antiquewhite;
+}
+
+.disabled {
+    display:none;
 }
