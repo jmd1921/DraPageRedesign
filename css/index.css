@@ -1,13 +1,39 @@
-a:hover {
+.row div {
+    border-left: solid 1px
+}
+
+.row div:hover {
     background-color: gray;
     color: white;
-    text-decoration: none;
+    cursor:pointer;
 }
 
 a {
     color: black;
 }
 
-.container div:last-child{
-    text-align: right;
+.selected {
+    background-color: dimgray;
+    border-radius: 5px;
+}
+
+.selected a {
+    color: white;
+}
+
+a:hover {
+    color:black;
+}
+
+img {
+    position: absolute;
+    max-width: 100%;
+}
+
+span.glyphicon {
+    font-size: 2em;
+}
+
+span.glyphicon:hover {
+    color: antiquewhite;
 }
