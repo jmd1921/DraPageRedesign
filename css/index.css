@@ -1,6 +1,9 @@
+body {
+    overflow: hidden;
+}
+
 .container-fluid {
     padding: 0;
-    overflow-y: hidden;
 }
 
 #article {
@@ -32,9 +35,25 @@ a:hover {
     color:black;
 }
 
-img {
+.article > img {
     position: absolute;
+    display: block;
+    top: 0px;
+    z-index: -99;
     max-width: 100%;
+    padding-left:18%;
+    padding-right: 18%;
+}
+
+.article > p {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    padding-top: 10%;
+    padding-left: 50%;
+    padding-right: 20%;
+    font-size: 1.5vw;
+    font-weight: bold;
 }
 
 span.glyphicon {
@@ -47,4 +66,26 @@ span.glyphicon:hover {
 
 .disabled {
     display:none;
+}
+
+.pager li>a {
+    background-color:transparent;
+    border: none;
+}
+
+.pager li>a:focus, .pager li>a:hover {
+    background-color: transparent;
+}
+
+ul.pager {
+    padding-left: 18%;
+    padding-right: 18%;
+}
+
+ul.nav.nav-pills {
+    padding-left: 10%;
+}
+
+nav.navbar-fixed-bottom {
+    padding-bottom:10%;
 }
