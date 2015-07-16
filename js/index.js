@@ -1,11 +1,55 @@
-window.onresize = function (event) {
-    //resizeDiv();
+function deleteFormInfo() {
+    var inputs = $("form")[0].children;
+    for(i=0; i<inputs.length; i++) {
+        $(inputs[i]).val("");
+    }
 }
 
-function createMap() {
-}
+function createForm() {
+    var form = document.createElement("form");
+    form.setAttribute("action", "send_email.php");
+    form.setAttribute("method", "post");
+    var nameInput = document.createElement("input");
+    nameInput.type="text";
+    nameInput.setAttribute("placeholder","Nombre");
+    
+    form.appendChild(nameInput);
+    form.appendChild(document.createElement("br"));
+    var mailInput = document.createElement("input");
+    mailInput.type="email";
+    mailInput.setAttribute("placeholder","Mail");
+    
+    form.appendChild(mailInput);
+    form.appendChild(document.createElement("br"));
+    var telInput = document.createElement("input");
+    telInput.type="text";
+    telInput.setAttribute("placeholder","Teléfono");
+    telInput.setAttribute("max", "10");
+    
+    form.appendChild(telInput);
+    form.appendChild(document.createElement("br"));
+    var msgInput = document.createElement("textarea");
+    msgInput.type="text";
+    msgInput.setAttribute("placeholder", "Mensaje");
+    msgInput.setAttribute("rows", "4");
+    
+    form.appendChild(msgInput);
+    
+    var buttonsContainer = document.createElement("div");
+    $(buttonsContainer).toggleClass("btn-inline");
+    var sendButton = document.createElement("input");
+    sendButton.type = "submit";
+    sendButton.setAttribute("value", "Enviar");
+    buttonsContainer.appendChild(sendButton);
 
-function destroyMap() {
+    var cancelButton = document.createElement("input");
+cancelButton.type = "button";
+    cancelButton.setAttribute("value", "Cancelar");
+    cancelButton.onclick = deleteFormInfo;
+    buttonsContainer.appendChild(cancelButton);
+    form.appendChild(buttonsContainer);
+    
+    return form;
 }
 
 function changeBackground(el) {
@@ -36,14 +80,25 @@ function changeBackground(el) {
             $(text).css("color","black");
             break;
         case "CONTACTO":
-            img.src = "media/ojos.png";
+            img.src = "media/contacto.png";
             text.innerHTML = "";
-            createMap();
+            if(text.className.indexOf("contact") < 0)
+                $(text).toggleClass("contact");
+            var container = document.createElement("div");
+            $(container).toggleClass("row");
+            var form = createForm();
+            $(form).toggleClass("col-md-5");
+            container.appendChild(form);
+            var map = document.createElement("img");
+            map.src = "https://maps.googleapis.com/maps/api/staticmap?center=Lavalle1737,Buenos%20Aires&zoom=15&size=400x300&maptype=roadmap&markers=color:red%7CLavalle1737,Buenos%20Aires";
+            $(map).toggleClass("col-md-7");
+            container.appendChild(map);
+            text.appendChild(container);
             break;
     }
     
-    if(el.currentTarget.innerHTML != "CONTACTO")
-        destroyMap();
+    if(text.className.indexOf("contact") >= 0 && el.currentTarget.innerHTML != "CONTACTO")
+        $(text).toggleClass("contact");
     
     $(text).fadeIn();
     $(img).fadeIn();
@@ -56,6 +111,5 @@ function resizeDiv() {
 }
 
 $(document).ready(function () {
-    //resizeDiv();
     $(".link > a").click(changeBackground);
 });

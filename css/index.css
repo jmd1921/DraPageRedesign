@@ -13,15 +13,6 @@ body {
 p {
     z-index: 5;
 }
-.row div {
-    border-left: solid 1px
-}
-
-.row div:hover {
-    background-color: gray;
-    color: white;
-    cursor:pointer;
-}
 
 a {
     color: black;
@@ -83,9 +74,36 @@ ul.pager {
 }
 
 ul.nav.nav-pills {
-    padding-left: 10%;
+    padding-left: 18%;
 }
 
 nav.navbar-fixed-bottom {
     padding-bottom:10%;
+}
+
+.article > p.contact {
+    padding-left: 40%;
+}
+
+input, textarea{
+    width: 100%;
+    font-size: 10pt;
+}
+
+textarea {
+    margin-top: 5px;
+}
+
+.btn-inline{
+    text-align: center;
+}
+
+.btn-inline > * {
+    display: table-column;
+    width: 40%;
+    margin-left: 2px;
+    border-radius: 5px;
+    background-color: deeppink;
+    color: lightgray;
+    border-color: hotpink;
 }
