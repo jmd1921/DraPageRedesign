@@ -1,7 +1,7 @@
 <html>
 <body>
 <?php
-$to = "consultas@centromedicodraji.com.ar";
+$to = "jmdonandueno@hotmail.com";
 $subject = $_POST["nombre"] . " - " . $_POST["telefono"] . " - Consulta web";
 $message = $_POST["mensaje"];
 $headers = 'From: mailer@jessicaim.com'. "\r\n" .
