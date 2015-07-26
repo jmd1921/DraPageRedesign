@@ -36,7 +36,7 @@ a:hover {
     padding-right: 18%;
 }
 
-.article > p {
+.article > p , .article > div{
     position: absolute;
     width: 100%;
     text-align: right;
@@ -50,6 +50,8 @@ a:hover {
 span.glyphicon {
     font-size: 2em;
 }
+
+
 
 span.glyphicon:hover {
     color: antiquewhite;
@@ -81,7 +83,7 @@ nav.navbar-fixed-bottom {
     padding-bottom:10%;
 }
 
-.article > p.contact {
+.article > div.contact {
     padding-left: 40%;
 }
 
@@ -106,4 +108,9 @@ textarea {
     background-color: deeppink;
     color: lightgray;
     border-color: hotpink;
+    font-size: 0.5em;
+}
+
+.hide, .hide * {
+    display: none!important;
 }
