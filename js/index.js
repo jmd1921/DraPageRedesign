@@ -4,6 +4,15 @@ function deleteFormInfo() {
         $(inputs[i]).val("");
     }
 }
+function sendForm() {
+    var name = $('[name="nombre"]');
+    var mail = $('[name="mail"]');
+    var tel = $('[name="telefono"]');
+    var msg = $('[name="mensaje"]');
+    
+    if(name.val().length <= 0 || mail.val().length <= 0 || tel.val().length <= 0 || msg.val().length <= 0)
+        return false;
+}
 function changeBackground(el) {
     var visible = $(".article > *:not(.hide)");
     $(visible).toggleClass("hide");
@@ -51,4 +60,22 @@ function changeBackground(el) {
 $(document).ready(function () {
     $(".link > a").click(changeBackground);
     $("#cancelForm").click(deleteFormInfo);
+    $("form").submit(function() {
+        var url = "send_email.php"; 
+        $.ajax({
+               type: "POST",
+               url: url,
+               data: $("form").serialize(),
+               success: function(data) {
+                   alert(data); 
+               },
+               error: function(err) {
+                    alert(err);
+                }
+             });
+
+        return false;
+    });
 });
+
+

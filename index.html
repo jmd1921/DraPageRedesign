@@ -23,11 +23,11 @@
     <div class="container-fluid">
         <nav class="header">
             <ul class="nav nav-pills">
-                <li role="presentation" class="link"><a href="#">PRINCIPAL</a></li>
-                <li role="presentation" class="link"><a href="#">QUIENES</a></li>
-                <li role="presentation" class="link"><a href="#">QUE</a></li>
-                <li role="presentation" class="link"><a href="#">COMO</a></li>
-                <li role="presentation" class="link"><a href="#">CONTACTO</a></li>
+                <li role="presentation" class="link"><a href="#" style="outline: 0;">PRINCIPAL</a></li>
+                <li role="presentation" class="link"><a href="#" style="outline: 0;">QUIENES</a></li>
+                <li role="presentation" class="link"><a href="#" style="outline: 0;">QUE</a></li>
+                <li role="presentation" class="link"><a href="#" style="outline: 0;">COMO</a></li>
+                <li role="presentation" class="link"><a href="#" style="outline: 0;">CONTACTO</a></li>
             </ul>
         </nav>
         <div class="article">
@@ -42,14 +42,14 @@
             <p id="content4" class="hide">Phasellus quis lectus in risus viverra aliquam. Nam aliquet ipsum aliquam tincidunt sagittis. Nulla venenatis a velit interdum eleifend. Proin sollicitudin leo eu lorem scelerisque placerat. Praesent at mollis purus. Fusce vel leo molestie, ornare nulla quis, tincidunt arcu. Maecenas scelerisque accumsan turpis, at porta ante. Suspendisse potenti.</p>
             <div id="content5" class="contact hide">
                 <div class="row">
-                    <form class="col-md-5" action="send_email.php" method="post">
-                        <input type="text" placeholder="Nombre"/>
+                    <form class="col-md-5">
+                        <input type="text" name="nombre" placeholder="Nombre" required/>
                         <br/>
-                        <input type="email" placeholder="Mail" />
+                        <input type="email" name="mail"  placeholder="e-mail" required/>
                         <br/>
-                        <input type="text" placeholder="Teléfono" />
+                        <input type="text" name="telefono" placeholder="Teléfono" required/>
                         <br />
-                        <textarea placeholder="Mensaje" rows="4"></textarea>
+                        <textarea placeholder="Mensaje" name="mensaje" rows="4" required></textarea>
                         <div class="btn-inline">
                             <input type="submit" value="Enviar"/>
                             <input id="cancelForm" type="button" value="Cancelar" />

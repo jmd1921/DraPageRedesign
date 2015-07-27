@@ -1,5 +1,3 @@
-<html>
-<body>
 <?php
 $to = "jmdonandueno@hotmail.com";
 $subject = $_POST["nombre"] . " - " . $_POST["telefono"] . " - Consulta web";
@@ -9,10 +7,5 @@ $headers = 'From: mailer@jessicaim.com'. "\r\n" .
 
 mail($to, $subject, $message, $headers);
 ?>
-    
-Gracias <?php echo $_POST["nombre"]; ?>,<br>
+Gracias <?php echo $_POST["nombre"]; ?>,
 su consulta ha sido realizada correctamente
-
-</body>
-</html>
-
